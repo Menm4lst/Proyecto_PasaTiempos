@@ -325,35 +325,144 @@ section {
     font-size: 1.4rem;
 }
 
+.btn-producto {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: transparent;
+    color: var(--dorado);
+    text-decoration: none;
+    border: 2px solid var(--dorado);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: var(--transicion);
+}
+
+.btn-producto:hover {
+    background-color: var(--dorado);
+    color: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
 /* Sobre la artista */
-.sobre-artista {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+.artista-info-centrado {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
 }
 
-.artista-img {
-    flex: 1;
-    min-width: 300px;
-    height: 400px;
-    background-color: var(--marron-claro);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.artista-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-.artista-info p {
+.artista-info-centrado p {
     margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.artista-info-centrado .btn {
+    margin-top: 10px;
+}
+
+/* Sección Redes Sociales */
+.seccion-redes {
+    background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-claro) 100%);
+    padding: 80px 5%;
+}
+
+.contenido-redes {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texto-redes {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+    color: var(--beige);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.llamadas-accion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.cta-item {
+    background-color: rgba(245, 232, 200, 0.1);
+    border-radius: 15px;
+    padding: 30px 20px;
+    transition: var(--transicion);
+    border: 2px solid transparent;
+}
+
+.cta-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--dorado);
+    background-color: rgba(245, 232, 200, 0.2);
+}
+
+.cta-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.cta-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.cta-item p {
+    margin-bottom: 20px;
+    color: var(--beige);
+    opacity: 0.9;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--dorado);
+    color: var(--verde-oscuro);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transicion);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.incentivos {
+    background-color: rgba(26, 58, 26, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    border: 2px solid var(--dorado);
+}
+
+.incentivo-texto {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--dorado);
+}
+
+.lista-incentivos {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.lista-incentivos li {
+    padding: 8px 0;
     font-size: 1.1rem;
+    color: var(--beige);
 }
 
 /* Footer */
@@ -363,30 +472,53 @@ footer {
     text-align: center;
 }
 
+.footer-llamada {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--dorado);
+}
+
 .redes-sociales {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 30px;
+    margin: 30px 0;
 }
 
 .red-social {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    padding: 15px 25px;
     background-color: var(--dorado);
-    border-radius: 50%;
+    border-radius: 30px;
     color: var(--verde-oscuro);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     transition: var(--transicion);
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
 }
 
 .red-social:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+.red-texto {
+    margin-right: 8px;
+}
+
+.red-icon {
+    font-weight: bold;
+}
+
+.footer-beneficio {
+    font-size: 1rem;
+    color: var(--beige);
+    margin: 20px 0;
+    font-style: italic;
 }
 
 /* Botón fijo de contacto */
@@ -455,11 +587,36 @@ footer {
         font-size: 1.2rem;
     }
     
-    .sobre-artista {
-        flex-direction: column;
+    .artista-info-centrado {
+        padding: 10px;
     }
     
-    .artista-img {
-        width: 100%;
+    .artista-info-centrado p {
+        font-size: 1.1rem;
+    }
+    
+    .llamadas-accion {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cta-item {
+        padding: 20px 15px;
+    }
+    
+    .texto-redes {
+        font-size: 1.1rem;
+    }
+    
+    .redes-sociales {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .red-social {
+        width: 80%;
+        max-width: 250px;
+        justify-content: center;
     }
 }
