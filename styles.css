@@ -374,20 +374,49 @@ section {
 }
 
 /* Sobre la artista */
-.artista-info-centrado {
-    max-width: 800px;
+.sobre-artista {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
-    padding: 20px;
 }
 
-.artista-info-centrado p {
+.artista-img {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.foto-artista {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: var(--transicion);
+    border: 3px solid var(--plateado);
+}
+
+.foto-artista:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.artista-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.artista-info p {
     margin-bottom: 20px;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
-.artista-info-centrado .btn {
+.artista-info .btn {
     margin-top: 10px;
 }
 
@@ -622,6 +651,20 @@ footer {
     
     .artista-info-centrado p {
         font-size: 1.1rem;
+    }
+    
+    .sobre-artista {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .artista-img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .foto-artista {
+        max-width: 300px;
     }
     
     .llamadas-accion {
