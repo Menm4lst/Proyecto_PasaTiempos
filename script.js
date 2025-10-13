@@ -75,9 +75,45 @@ function efectoBrillo() {
     });
 }
 
+// Función para mejorar enlaces de Facebook en móviles
+function mejorarEnlacesFacebook() {
+    const enlacesFacebook = document.querySelectorAll('a[href*="facebook.com"]');
+    
+    enlacesFacebook.forEach(enlace => {
+        enlace.addEventListener('click', function(e) {
+            // Detectar si es un dispositivo móvil
+            const esMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (esMobile) {
+                e.preventDefault();
+                const fbId = '100076123205310';
+                
+                // Intentar abrir la app de Facebook primero
+                const appUrl = `fb://profile/${fbId}`;
+                const webUrl = `https://facebook.com/profile.php?id=${fbId}`;
+                
+                // Crear un enlace temporal para intentar abrir la app
+                const tempLink = document.createElement('a');
+                tempLink.href = appUrl;
+                tempLink.style.display = 'none';
+                document.body.appendChild(tempLink);
+                
+                // Intentar abrir la app, si falla abrir en navegador
+                setTimeout(() => {
+                    window.open(webUrl, '_blank');
+                    document.body.removeChild(tempLink);
+                }, 500);
+                
+                tempLink.click();
+            }
+        });
+    });
+}
+
 // Inicializar efectos cuando la página cargue
 window.addEventListener('load', () => {
     crearParticulas();
     crearHojas();
     efectoBrillo();
+    mejorarEnlacesFacebook();
 });
